@@ -1,10 +1,10 @@
 'use strict';
 
-module.exports.hello = async event => {
+module.exports.write = async event => {
+  const input = JSON.parse(event.body);
   return {
     statusCode: 200,
-  
-    body: 'hello, world!',
+    body: input.contents,
   };
 
   // Use this code if you don't use the http event with the LAMBDA-PROXY integration

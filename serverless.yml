@@ -58,12 +58,12 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  hello:
-    handler: handler.hello
+  write:
+    handler: handler.write
     events:
       - http:
-          path: hellosls
-          method: get
+          path: write
+          method: post
 
 # you can add CloudFormation resource templates here
 #resources:
