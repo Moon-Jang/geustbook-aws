@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports.write = async event => {
+  const connect = await require('connect.js').invoke;
   const input = JSON.parse(event.body);
   return {
     statusCode: 200,
