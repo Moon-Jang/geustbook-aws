@@ -64,6 +64,32 @@ functions:
       - http:
           path: write
           method: post
+  read:
+    handler: handler.read
+    events:
+      - http:
+          path: read
+          method: post
+  delete:
+    handler: handler.delete
+    events:
+      - http:
+          path: delete
+          method: post
+  update:
+    handler: handler.update
+    events:
+      - http:
+          path: update
+          method: post
+  addtestdata:
+    handler: handler.addtestdata
+    events:
+      - http:
+          path: addtestdata
+          method: post
+
+
 
 # you can add CloudFormation resource templates here
 #resources:

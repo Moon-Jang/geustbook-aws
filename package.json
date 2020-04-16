@@ -2,7 +2,9 @@
   "name": "geustbook-aws",
   "description": "",
   "version": "0.1.0",
-  "dependencies": {},
+  "dependencies": {
+    "bcrypt": "^4.0.1"
+  },
   "devDependencies": {
     "mysql2": "^2.1.0",
     "serverless": "^1.66.0",
