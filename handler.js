@@ -32,7 +32,15 @@ module.exports.read = async event => {
   const page = JSON.parse(event.body).page;
   let contents = new Array();
   console.log("pageNum : "+page);
-  const [rows, fields]= await connection.execute("select gb.* FROM (SELECT * FROM guestbook order by wdate asc) gb WHERE NOT gb.alive = 0 LIMIT ?,? ;",[(page-1)*10,10]);
+  const [rows, fields]= await connection.execute(
+    "select"+
+    " gb.idx,"+
+    "gb.contents,"+
+    "gb.name,"+
+    "gb.password,"+
+    "date_format(gb.wdate,'%y-%m-%d %T') as wdate,"+
+    "gb.alive "+
+    "FROM (SELECT * FROM guestbook order by wdate asc) gb WHERE NOT gb.alive = 0 LIMIT ?,? ;",[(page-1)*10,10]);
   contents = rows;
   //console.log(rows);
  //비교함수 

@@ -3,8 +3,8 @@ module.exports.invoke = async () => {
     // create the connection to database
     const connection = mysql.createConnection({
     host: '52.78.18.86',
-    user: 'root',
-    password : "root",
+    user: 'mj',
+    password : "1234",
     database: 'guestbook'
     });
     return connection;
