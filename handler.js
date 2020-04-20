@@ -48,6 +48,9 @@ module.exports.read = async event => {
   //console.log(resultQuery);
   return {
     statusCode: 200,
+    headers: {
+      "Access-Control-Allow-Origin": "*"
+    },
     body: JSON.stringify(contents),
   };
 };
