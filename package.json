@@ -3,14 +3,15 @@
   "description": "",
   "version": "0.1.0",
   "dependencies": {
-    "bcrypt": "^4.0.1"
-  },
-  "devDependencies": {
+    "bcrypt": "^4.0.1",
     "mysql2": "^2.1.0",
     "serverless": "^1.66.0",
     "serverless-cloudformation-sub-variables": "^0.2.1",
     "serverless-domain-manager": "^3.3.1",
     "serverless-offline": "^5.12.1",
     "serverless-prune-plugin": "^1.4.2"
+  },
+  "devDependencies": {
+    
   }
 }

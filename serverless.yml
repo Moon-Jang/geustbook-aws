@@ -109,8 +109,8 @@ plugins:
   - serverless-domain-manager
 custom:
   domain:
-    dev: dev.api.app.countap.com
-    prod: api.app.countap.com
+#    dev: dev.api.app.countap.com
+#    prod: api.app.countap.com
   prune:
     automatic: true
     number: 3
