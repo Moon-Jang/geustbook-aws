@@ -22,6 +22,9 @@ module.exports.write = async event => {
   const resultQuery = connection.execute("INSERT INTO guestbook (name,contents,password) VALUES (?,?,?);",[input.name,input.contents,input.password]);
   return {
     statusCode: 200,
+    headers: {
+      "Access-Control-Allow-Origin": "*"
+    },
     body: 'write success',
   };
 };
@@ -40,7 +43,7 @@ module.exports.read = async event => {
     "gb.password,"+
     "date_format(gb.wdate,'%y-%m-%d %T') as wdate,"+
     "gb.alive "+
-    "FROM (SELECT * FROM guestbook order by wdate asc) gb WHERE NOT gb.alive = 0 LIMIT ?,? ;",[(page-1)*10,10]);
+    "FROM (SELECT * FROM guestbook order by wdate desc) gb WHERE NOT gb.alive = 0 LIMIT ?,? ;",[(page-1)*10,10]);
   contents = rows;
   //console.log(rows);
  //비교함수 
